@@ -14,6 +14,14 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="first-screen">
+    <div class="background"></div>
+    <div class="container-top">
+      <div class="logo"></div>
+      <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </div>
+    </div>
+    <a class='btn-next' href="#">Continue</a>
+  </div>
   <section id="home">
     <div class="col-left">
     <div class="ornament-1">
@@ -89,69 +97,10 @@
 
   <!-- additional script -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TimelineMax.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-  <script>
-    $(document).ready(function() {
-
-      var tl = new TimelineLite()
-      var search_active = false
-      var $el = $('.content')
-      var $city = $('.city')
-      var during_animation = false
-
-      $('.container-slider').slick({
-        arrows: false ,
-        dots: true
-      })
-
-      $('.btn-back').on('click' , function() {
-        $('.container-search').removeClass('hide')
-        $('.btn-back').removeClass('show')
-        $('.container-jumbo--search').removeClass('show')
-        TweenLite.to($city , 2.2 , {
-          x: 0 ,
-          ease: Power4.easeOut
-        })
-        tl.staggerTo($el , 1 , {
-          x: 0 ,
-          autoAlpha: 1 ,
-          ease: Circ.easeOut 
-        } , .05)
-      })
-
-      $('.search-control').focus(function() {
-        if (!during_animation) {
-          during_animation = true
-          $('.container-search').addClass('hide')
-          $('.btn-back').addClass('show')
-          setTimeout(() => {
-            $('.container-jumbo--search').addClass('show')
-          }, 160);
-          TweenLite.to($city , 2.2 , {
-            x: -300 ,
-            ease: Power4.easeOut
-          })
-          // TweenLite.to('.container-jumbo--search' , .7 , {
-          //   y: 0 ,
-          //   x: '-70%' ,
-          //   autoAlpha: 1 ,
-          //   ease: Back.easeOut
-          // })
-          tl.staggerTo($el , 1 , {
-            x: -80 ,
-            autoAlpha: 0 ,
-            ease: Circ.easeOut 
-          } , .05)
-          setTimeout(() => {
-            during_animation = false
-          }, 250);
-        }
-
-      })     
-
-    })
-  </script>
+  <script src='js/home.js'></script>
 </body>
 </html>
