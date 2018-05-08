@@ -12,7 +12,7 @@ $(document).ready(function() {
     dots: true
   })
 
-    // $('.first-screen').show()
+    $('.first-screen').show()
   if ($.cookie('popup') != '1') {
     $('.first-screen').show()
   } else {
