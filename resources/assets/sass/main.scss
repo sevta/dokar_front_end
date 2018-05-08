@@ -1,8 +1,105 @@
 @import './_var';
-
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,500,700,900');
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,600,700,800,900');
 * {
   font-family: Nunito Sans;
+}
+
+.ornament-left {
+  @include size(355px , 537px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url('../../img/ornament-left.svg');
+  z-index: 0;
+}
+.ornament-right {
+  @include size(285px , 294px);
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url('../../img/ornament-right.svg');
+  z-index: 0;
+}
+.full-searchbar {
+  @include size(100% , 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 40;
+  // background: url('../img/img.jpg') no-repeat;
+  opacity: 1;
+  transition: all .6s ease;
+  // background-blend-mode: multiply, normal;
+  // mix-blend-mode: darken;
+  // filter: blur(7px);
+  // filter: blur(3px);
+  overflow: hidden;
+  transform: translateY(-100%);
+  &::before {
+    content: "";
+    @include size(100% , 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: whitesmoke;
+    opacity: .95;
+  }
+  &.active {
+    transform: translateY(0);
+  }
+  .close {
+    @include size(20px , 20px);
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: url('../img/delete.svg') no-repeat;
+    background-size: cover;
+  }
+ .container-jumbo--search {
+    @include size(509px , 100px);
+    // background: yellow;
+    @include center;
+    top: 30%;
+    margin: 0 auto;
+    .jumbo-search--control {
+      @include size(412px , 41px);
+      border-radius: 30px;
+      background: white;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border: none;
+      box-shadow: 0px 3px 2px rgba(0,0,0,0.14);
+      &:focus { outline: none; padding-left: 30px; }
+    }
+    .search-btn {
+      display: block;
+      @include size(80px , 41px);
+      background: $secondary-color;
+      // background: $third_color;
+      border-radius: 30px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      @include flex-center;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+      box-shadow: 0px 3px 2px rgba(0,0,0,0.14);
+    }
+    .text {
+      font-size: 36px;
+      color: $secondary-color;
+      font-weight: bold;
+    }
+  }
+}
+
+#home {
+  &.active {
+    filter: blur(7px);
+  }
 }
 
 .first-screen {

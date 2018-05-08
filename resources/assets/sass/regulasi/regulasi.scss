@@ -1,28 +1,95 @@
 @import '../_var';
 
-.container-list--regulasi {
+body {
   position: relative;
-  @include size(100% , 100%);
-  .regulasi-list {
-    @include size(200px , 41px);
-    background: $secondary-color;
-    // background: whitesmoke;
-    border-radius: 60px;
-    @include flex-center;
-    color: $secondary-color;
+}
+
+.footer {
+  position: relative;
+  background: #e07103;
+}
+
+.ornament-footer {
+  bottom: 60px;
+}
+
+
+.col-content {
+  .title {
     color: white;
+    font-size: 48px;
     font-weight: bold;
-    cursor: pointer;
-    margin: 10px 0px;
-    box-shadow: 0px 3px 2px rgba(0,0,0,0.14);
+    font-family: Maven Pro;
+  }
+  .content {
+    width: 623px;
+    height: 115px;
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 25px;
+    font-size: 14px;
+    margin-top: 15px;
+    color: #FEFEFE;
   }
 }
 
-#pdf-container {
-  @include size(600px , 600px);
-  // border: solid white 1px;
-  position: absolute;
-  z-index: 10;
-  right: 160px;
-  top: 20px;
+.container-center {
+  @include size(100% , 100%);
+  position: relative;
+  display: flex;
+  margin-top: 0px;
+  .container-list--regulasi {
+    position: relative;
+    @include size(auto , 100%);
+    margin-right: 70px;
+    .regulasi-list {
+      @include size(290px , 36px);
+      // background: $secondary-color;
+      background: white;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+      color: $secondary-color;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 10px 0px;
+      // box-shadow: 0px 3px 2px rgba(0,0,0,0.14);
+      position: relative;
+      overflow: hidden;
+      .btn-plus {
+        @include size(37px , 100%);
+        background: $secondary-color;
+        position: absolute;
+        right: 0;
+        top: 0;
+        &::before {
+          content: '';
+          @include size(3px , 13px);
+          background: white;
+          @include center;
+        }
+        &::after {
+          content: '';
+          @include size(13px , 3px);
+          background: white;
+          @include center;
+        }
+      }
+    }
+  }
+
+  #pdf-container {
+    @include size(570px , 678px);
+    // border: solid white 1px;
+    // position: absolute;
+    z-index: 10;
+    // right: 0px;
+    // top: 0px;
+    border: 5px solid #C5680B;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: hidden;
+  }
 }

@@ -15,7 +15,17 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="full-searchbar">
+    <div class="close"></div>
+    <div class="container-jumbo--search">
+      <div class="text">Cari doukumen arsip disini...</div>
+      <input type="text" class="jumbo-search--control">
+      <a href='#' class='search-btn'>search</a>
+    </div>
+  </div>
   <section id="home">
+    <div class="ornament-left"></div>
+    <div class="ornament-right"></div>
     <div class="col-left">
     <div class="ornament-1">
       <div class="center-2"></div>
@@ -40,14 +50,23 @@
 
     </div>
     <div class="col-right">
-      <div class="container-list--regulasi">
-        <div class="regulasi-list list-1">uud 45</div>
-        <div class="regulasi-list list-2">pergub 74 2008</div>
-        <div class="regulasi-list list-3">pergub 74 2008</div>
-        <div class="regulasi-list list-4">pergub 74 2008</div>
+      <div class="container-search">
+        <input type="text" class="search-control" placeholder="cari dokumen arsip disini...">
       </div>
-      <div id="pdf-container">
-          <iframe id='pdf-view' src="https://drive.google.com/open?id=1vgNG35qswTMDc9jwJJeSr7vc02YZQHZ0" frameborder="0" width="100%" height="100%"></iframe>
+      <div class="col-content">
+        <div class="title">Regulasi Kearsipan</div>
+        <div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum ipsa tenetur, totam eos maiores suscipit quibusdam sint ipsum asperiores voluptates dolorum nulla, nam consectetur a nihil deserunt assumenda harum esse.</div>
+      </div>
+      <div class="container-center">
+        <div class="container-list--regulasi">
+          <div class="regulasi-list list-1"><span class='btn-plus'></span>uud 45</div>
+          <div class="regulasi-list list-2"><span class='btn-plus'></span>pergub 74 2008</div>
+          <div class="regulasi-list list-3"><span class='btn-plus'></span>pergub 74 2008</div>
+          <div class="regulasi-list list-4"><span class='btn-plus'></span>pergub 74 2008</div>
+        </div>
+        <div id="pdf-container">
+            <iframe id='pdf-view' src="https://drive.google.com/open?id=1vgNG35qswTMDc9jwJJeSr7vc02YZQHZ0" frameborder="0" width="100%" height="100%"></iframe>
+        </div>
       </div>
     </div>
   </section>
@@ -91,6 +110,18 @@
 
     $('.list-4').on('click' , function(){
       changePDF(regulasi_pdf._4)
+    })
+
+    $('.search-control').on('click' , function() {
+      $('.full-searchbar').toggleClass('active')
+      $('#home').toggleClass('active')
+      $('.ornament-footer').toggleClass('active')
+    })
+
+    $('.close').on('click' , function() {
+      $('.full-searchbar').removeClass('active')
+      $('.ornament-footer').removeClass('active')
+      $('#home').removeClass('active')
     })
   </script>
 </body>
