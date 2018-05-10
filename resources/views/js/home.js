@@ -24,6 +24,8 @@ $(document).ready(function() {
     $.cookie('popup' , '1' , {expires: expired_cookie})
   })
 
+  
+
   $('.btn-back').on('click' , function() {
     $('.container-search').removeClass('hide')
     $('.btn-back').removeClass('show')

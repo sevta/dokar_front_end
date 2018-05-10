@@ -1,43 +1,12 @@
 @import '../_var';
 
-.footer {
-  @include size(100% , 67px);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  // background: $secondary-color;
-  z-index: 5;
-  color: white;
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-  font-size: 14px;
-}
 
-.ornament-footer {
-  @include size(100% , 341px);
-  // background: $secondary-color;
-  z-index: 4;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  opacity: .54;
-  overflow: hidden;
-  .city {
-    @include size(300% , 100%);
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: url('../../img/city3.svg');
-  }
-  &.active { z-index: -1; }
-}
 
 #home {
   @include size(100%, auto);
   display: flex;
   position: relative;
-  background: $third-color;
+  background: $primary-color;
   overflow: hidden;
   
   .btn-back {
@@ -252,8 +221,8 @@
     .container-content {
       .title {
         color: white;
-        font-size: 42px;
-        font-weight: 900;
+        font-size: 31px;
+        font-weight: bold;
         position: relative;
         &::before {
           display: none;
@@ -263,6 +232,11 @@
           left: 0;
           @include size(62px , 6px);
           background: $secondary-color;
+        }
+        .title-c {
+          font-size: 14px;
+          font-weight: normal;;
+          line-height: 21px;
         }
       }
 
