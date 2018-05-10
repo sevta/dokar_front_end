@@ -15,6 +15,15 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="full-login-container">
+    <div class="close"></div>
+    <div class="container-jumbo--search login-container">
+      <div class="text text-login">Login</div>
+      <input type="text" placeholder="username" class="username-input">
+      <input type="text" placeholder="password" class="password-input">
+      <a href='#' class='login-btn'>search</a>
+    </div>
+  </div>
   <div class="full-searchbar">
     <div class="close"></div>
     <div class="container-jumbo--search">
@@ -112,6 +121,10 @@
       changePDF(regulasi_pdf._4)
     })
 
+    $('.btn-login').on('click' , function() {
+      $('.full-login-container').toggleClass('active')
+    })
+
     $('.search-control').on('click' , function() {
       $('.full-searchbar').toggleClass('active')
       $('#home').toggleClass('active')
@@ -120,6 +133,7 @@
 
     $('.close').on('click' , function() {
       $('.full-searchbar').removeClass('active')
+      $('.full-login-container').removeClass('active')
       $('.ornament-footer').removeClass('active')
       $('#home').removeClass('active')
     })
