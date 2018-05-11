@@ -26,7 +26,7 @@ $(document).ready(function() {
 
   
 
-  $('.btn-back').on('click' , function() {
+  $('.back-btn').on('click' , function() {
     $('.container-search').removeClass('hide')
     $('.btn-back').removeClass('show')
     $('.container-jumbo--search').removeClass('show')
@@ -39,6 +39,11 @@ $(document).ready(function() {
       autoAlpha: 1 ,
       ease: Circ.easeOut 
     } , .05)
+    TweenLite.to('.container-slider' , 2.2 , {
+      x: 0 ,
+      autoAlpha: 1 ,
+      ease: Power4.easeOut
+    })
   })
 
   $('.search-control').focus(function() {
@@ -46,6 +51,11 @@ $(document).ready(function() {
       during_animation = true
       $('.container-search').addClass('hide')
       $('.btn-back').addClass('show')
+      TweenLite.to('.container-slider' , 2.2 , {
+        x: -300 ,
+        autoAlpha: 0 ,
+        ease: Power4.easeOut
+      })
       setTimeout(() => {
         $('.container-jumbo--search').addClass('show')
       }, 160);

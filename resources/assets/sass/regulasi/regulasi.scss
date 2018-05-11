@@ -58,6 +58,7 @@ body {
       // box-shadow: 0px 3px 2px rgba(0,0,0,0.14);
       position: relative;
       overflow: hidden;
+      // border: solid 2px $secondary-color;
       .btn-plus {
         @include size(37px , 100%);
         background: $secondary-color;
