@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+
+  <!-- additional -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/home/newhome.css">
+  <link rel="stylesheet" href="./css/regulasi/newregulasi.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="pdf-container"></div>
+
+  <div class="navbar-menu"></div>
+  
+  <div class="popup-login">
+    <div class="popup-login--center">
+      <div class="login--text">Login</div>
+      <div class="login--subtext">Cari dokumen arsip disini</div>
+      <input type="text" class="login--input" placeholder="Username">
+      <input type="password" class="login--input" placeholder="Password">
+      <button class="btn-login">Login</button>
+    </div>
+  </div>
+
+  <section id="regulasi">
+    <div class="n-navbar">
+      <div class="logo"></div>    
+      <div class="burger-menu">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>    
+      <div class="navbar-list">
+        <a href="#">smep</a>
+        <a href="#">regulasi kearsipan</a>
+        <a href="#">tutorial</a>
+        <a href="#">intruksi kerja</a>
+        <a href="#" class='login-nav'>Login</a>
+      </div>
+    </div>
+    <div class="container-list">
+      <div class="list-title">Regulasi Kearsipan</div>
+      <div class="list-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae porro doloremque magni illum dolores pariatur voluptate ex.</div>
+
+      <div class="list-box" data-url='url'>
+        <div class="list-box--bullet"></div>
+        <div class="list-box--text">UUD 45</div>
+      </div>
+      <div class="list-box" data-url='url'>
+        <div class="list-box--bullet"></div>
+        <div class="list-box--text">UUD 45</div>
+      </div>
+      <div class="list-box" data-url='url'>
+        <div class="list-box--bullet"></div>
+        <div class="list-box--text">UUD 45</div>
+      </div>
+      <div class="list-box" data-url='url'>
+        <div class="list-box--bullet"></div>
+        <div class="list-box--text">UUD 45</div>
+      </div>
+        <div class="list-box" data-url='url'>
+        <div class="list-box--bullet"></div>
+        <div class="list-box--text">UUD 45</div>
+      </div>
+      <div class="list-box" data-url='url'>
+        <div class="list-box--bullet"></div>
+        <div class="list-box--text">UUD 45</div>
+      </div>
+      <div class="list-box" data-url='url'>
+        <div class="list-box--bullet"></div>
+        <div class="list-box--text">UUD 45</div>
+      </div>
+      <div class="list-box" data-url='url'>
+        <div class="list-box--bullet"></div>
+        <div class="list-box--text">UUD 45</div>
+      </div>
+    </div>
+  </section>
+
+    <div class="ornament-city"></div>
+    <div class="section fp-auto-height n-footer fix">
+      &copy; copyright dokumen arsip jakarta
+    </div>
+  
+  </div>
+
+  <!-- additional script -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TimelineMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/granim/1.1.0/granim.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/vendors/scrolloverflow.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js'></script>
+  <script src='js/home.js'></script>
+
+  <script>
+    $(document).ready(function() {
+      
+      var color = ['#FC7EFF' , '#FE5959' , '#7EE0FF' , '#53FB29']
+      var url
+
+      $('.list-box').each(function(i) {
+        var random = Math.floor(Math.random() * color.length)
+        $('.list-box--bullet').eq(i)
+          .css({ 'background' : color[random] })
+      })
+
+      $('.login-nav').on('click' , function() {
+        $('.popup-login').toggleClass('active')
+      })
+
+      $('.popup-login').on('click' , function() {
+        $(this).removeClass('active')
+      })
+
+      $('.popup-login--center').on('click' , function(evt) {
+        evt.stopPropagation()
+      })
+
+      $('.burger-menu').on('click' , function() {
+        $(this).toggleClass('active')
+        $('.navbar-menu').toggleClass('active')
+        $('#regulasi').toggleClass('active')
+      })
+
+      $('.list-box').on('click' , function() {
+        url = $(this).data('url')
+        console.log(url)
+        $('.pdf-container').toggleClass('active')
+      })
+
+      $('.pdf-container').on('click' , function() {
+        $(this).removeClass('active')
+      })
+  
+      TweenMax.staggerFrom($('.list-box') , 1.2 , {
+        y: -40 ,
+        opacity: 0 ,
+        ease: Expo.easeOut
+      } , .3 )
+
+    })
+  </script>
+</body>
+</html>

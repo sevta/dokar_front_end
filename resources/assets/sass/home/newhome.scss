@@ -111,7 +111,7 @@ body {
      -webkit-transform: translateX(0);
    }
    to { 
-     -webkit-transform: translateX(-100%);
+     -webkit-transform: translateX(-1100px);
    }
 }
 
@@ -173,14 +173,16 @@ body {
         background: #333;
         background: url('../../img/dki.png') no-repeat;
         background-size: cover;
+        margin-left: -30px;
         // margin-top: 15px;
-        @include center-vertical;
-        left: 90px;
+        // @include center-vertical;
+        // left: 90px;
       }
       .burger-menu {
         @include size(24px , 20px);
         // background: #333;
         display: flex;
+        display: none;
         flex-direction: column;
         justify-content: space-between;
         // @include center-vertical;
@@ -220,7 +222,7 @@ body {
       bottom: -10px;
       left: 0;
       -webkit-animation-name: MOVE-BG;
-      -webkit-animation-duration: 200s;
+      -webkit-animation-duration: 50s;
       -webkit-animation-timing-function: linear;
       -webkit-animation-iteration-count: infinite;
     }
@@ -379,7 +381,7 @@ body {
   }
 
   .section4 {
-    background: $grey;
+    background: $orange;
     position: relative;
     .background-section4 {
       @include size(2326px , 365px);
@@ -389,7 +391,7 @@ body {
       bottom: -10px;
       left: 0;
       -webkit-animation-name: MOVE-BG;
-      -webkit-animation-duration: 200s;
+      -webkit-animation-duration: 150s;
       -webkit-animation-timing-function: linear;
       -webkit-animation-iteration-count: infinite;
     }

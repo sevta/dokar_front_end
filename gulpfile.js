@@ -19,7 +19,7 @@ let config = {
 
 gulp.task('sass' , () =>
   gulp.src(config.src)
-    .pipe(sass({outputStyle: 'compressed'}))
+    .pipe(sass({outputStyle: 'expanded'}))
     .pipe(autoPrefixer())
     .pipe(gulp.dest(config.dest))
 )
