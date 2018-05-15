@@ -13,11 +13,19 @@
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/home/newhome.css">
   <link rel="stylesheet" href="./css/regulasi/newregulasi.css">
+  <style>
+    .pdfobject-container { height: 500px;}
+    .pdfobject { border: 1px solid #666; }
+  </style>
   <title>Document</title>
 </head>
 <body>
 
-  <div class="pdf-container"></div>
+  <div class="pdf-container">
+      
+      <div id="pdf"></div>
+
+  </div>
 
   <div class="navbar-menu"></div>
   
@@ -40,6 +48,7 @@
         <span class="line"></span>
       </div>    
       <div class="navbar-list">
+        <a href="/index.html">beranda</a>
         <a href="#">smep</a>
         <a href="#">regulasi kearsipan</a>
         <a href="#">tutorial</a>
@@ -51,38 +60,38 @@
       <div class="list-title">Regulasi Kearsipan</div>
       <div class="list-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae porro doloremque magni illum dolores pariatur voluptate ex.</div>
 
-      <div class="list-box" data-url='url'>
+      <a href='/web/viewer.html?file=/pdf/regulasi/2.pdf' class="list-box" data-url='url'>
         <div class="list-box--bullet"></div>
-        <div class="list-box--text">UUD 45</div>
-      </div>
-      <div class="list-box" data-url='url'>
+        <div class="list-box--text">PP-No-28-Tahun-2012-tentang-Pelaksanaan-UU-No-43-Tahun-2009</div>
+      </a>
+      <a href='/web/viewer.html?file=/pdf/regulasi/3. PERDA 4 TAHUN 2017 TENTANG KEARSIPAN DAERAH.pdf' class="list-box" data-url='url'>
         <div class="list-box--bullet"></div>
-        <div class="list-box--text">UUD 45</div>
-      </div>
-      <div class="list-box" data-url='url'>
+        <div class="list-box--text">PERDA 4 TAHUN 2017 TENTANG KEARSIPAN DAERAH</div>
+      </a>
+      <a href='/web/viewer.html?file=/pdf/regulasi/7.pdf' class="list-box" data-url='url'>
         <div class="list-box--bullet"></div>
-        <div class="list-box--text">UUD 45</div>
-      </div>
-      <div class="list-box" data-url='url'>
+        <div class="list-box--text">pergub 74 2008 PEMBAKUAN PRASARANA DAN SARANA KEARSIPAN</div>
+      </a>
+      <a href='/web/viewer.html?file=/pdf/regulasi/8.pdf' class="list-box" data-url='url'>
         <div class="list-box--bullet"></div>
-        <div class="list-box--text">UUD 45</div>
-      </div>
-        <div class="list-box" data-url='url'>
+        <div class="list-box--text">Peraturan_Gubernur_Nomor_211_Tahun_2009 tentang Prosedur surat masuk pembuatan naskah dinas dan prosedur surat keluar</div>
+      </a>
+      <a href='/web/viewer.html?file=/pdf/regulasi/9.pdf' class="list-box" data-url='url'>
         <div class="list-box--bullet"></div>
-        <div class="list-box--text">UUD 45</div>
-      </div>
-      <div class="list-box" data-url='url'>
+        <div class="list-box--text">Pengelolaan arsip inaktif pergub 90 tahun 2010</div>
+      </a>
+      <a href='/web/viewer.html?file=/pdf/regulasi/10.pdf' class="list-box" data-url='url'>
         <div class="list-box--bullet"></div>
-        <div class="list-box--text">UUD 45</div>
-      </div>
-      <div class="list-box" data-url='url'>
+        <div class="list-box--text">PERGUB_94_TH_2016_NEW TND</div>
+      </a>
+      <a href='/web/viewer.html?file=/pdf/regulasi/11.pdf' class="list-box" data-url='url'>
         <div class="list-box--bullet"></div>
-        <div class="list-box--text">UUD 45</div>
-      </div>
-      <div class="list-box" data-url='url'>
+        <div class="list-box--text">PERGUB_NO.205_TAHUN_.2016 tentang Organisasi Ketatausahaan Daerah</div>
+      </a>
+      <a href='/web/viewer.html?file=/pdf/regulasi/12.pdf' class="list-box" data-url='url'>
         <div class="list-box--bullet"></div>
-        <div class="list-box--text">UUD 45</div>
-      </div>
+        <div class="list-box--text">Pergub_No._79_Tahun_2005 penitipan arsip aktif</div>
+      </a>
     </div>
   </section>
 
@@ -103,10 +112,22 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/granim/1.1.0/granim.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/vendors/scrolloverflow.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.0.201604172/pdfobject.min.js'></script>
   <script src='js/home.js'></script>
 
   <script>
     $(document).ready(function() {
+      // var path = '/pdf/regulasi/tes.pdf'
+      // var options = {
+      //     height: "400px",
+      //     pdfOpenParams: { view: 'FitV', page: '2' }
+      // };
+      // PDFObject.embed(path, "#pdf", options); 
+      // if(PDFObject.supportsPDFs){
+      //    console.log("Yay, this browser supports inline PDFs.");
+      // } else {
+      //    console.log("Boo, inline PDFs are not supported by this browser");
+      // }
       
       var color = ['#FC7EFF' , '#FE5959' , '#7EE0FF' , '#53FB29']
       var url
